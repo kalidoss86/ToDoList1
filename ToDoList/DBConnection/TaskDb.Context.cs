@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ToDoList
+namespace ToDoList.DBConnection
 {
     using System;
     using System.Data.Entity;

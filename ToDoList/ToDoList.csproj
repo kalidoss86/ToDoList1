@@ -54,20 +54,20 @@
   <ItemGroup>
     <Compile Include="IRepository.cs" />
     <Compile Include="Repository.cs" />
-    <Compile Include="Task.cs">
+    <Compile Include="DBConnection\Task.cs">
       <DependentUpon>TaskDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="TaskDb.Context.cs">
+    <Compile Include="DBConnection\TaskDb.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TaskDb.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="TaskDb.cs">
+    <Compile Include="DBConnection\TaskDb.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TaskDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="TaskDb.Designer.cs">
+    <Compile Include="DBConnection\TaskDb.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TaskDb.edmx</DependentUpon>
@@ -78,11 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <EntityDeploy Include="TaskDb.edmx">
+    <EntityDeploy Include="DBConnection\TaskDb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TaskDb.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="TaskDb.edmx.diagram">
+    <None Include="DBConnection\TaskDb.edmx.diagram">
       <DependentUpon>TaskDb.edmx</DependentUpon>
     </None>
   </ItemGroup>
@@ -90,12 +90,12 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TaskDb.Context.tt">
+    <Content Include="DBConnection\TaskDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TaskDb.edmx</DependentUpon>
       <LastGenOutput>TaskDb.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="TaskDb.tt">
+    <Content Include="DBConnection\TaskDb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TaskDb.edmx</DependentUpon>
       <LastGenOutput>TaskDb.cs</LastGenOutput>
