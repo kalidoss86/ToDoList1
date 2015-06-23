@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using ToDoList.DBConnection;
 
 namespace ToDoList
 {
@@ -59,23 +60,26 @@ namespace ToDoList
 
         public IQueryable<TObject> Filter(Expression<Func<TObject, bool>> predicate)
         {
-            //TODO Need to implement this function
-            throw new NotImplementedException();
+            return DbSet.Where(predicate).AsQueryable<TObject>();
         }
 
         public TObject Find(Expression<Func<TObject, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return DbSet.FirstOrDefault(predicate);
         }
 
         public TObject Find(params object[] keys)
         {
-            throw new NotImplementedException();
+            return DbSet.Find(keys);
         }
 
         public int Update(TObject t)
         {
-            throw new NotImplementedException();
+            var entry = Context.Entry(t);
+            DbSet.Attach(t);
+            entry.State = EntityState.Modified;
+            Context.SaveChanges();
+            return 0;
         }
     }
 }
