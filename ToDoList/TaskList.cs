@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToDoList.DBConnection;
 
 //Todo Program to add a new task
 //Todo Program to list all task
@@ -10,11 +11,19 @@ using System.Threading.Tasks;
 
 namespace ToDoList
 {
-    public class TaskList
+    public class TaskLib
     {
-        public void ListAll()
-        {
+        IRepository<Tasklist> taskRepository = new TaskRepository<Tasklist>();
 
+        public IEnumerable<Tasklist> ListAll()
+        {
+            return taskRepository.GetAll().ToList();
+        }
+
+        public IEnumerable<Tasklist> AddNewTask(Tasklist newTask)
+        {
+            taskRepository.Add(newTask);
+            return ListAll();
         }
     }
 }

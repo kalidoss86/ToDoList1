@@ -12,9 +12,9 @@ namespace ToDoList.DBConnection
     using System;
     using System.Collections.Generic;
     
-    public partial class Task
+    public partial class Tasklist
     {
-        public long id { get; set; }
+        public int id { get; set; }
         public string TaskTitle { get; set; }
         public string TaskDescription { get; set; }
         public Nullable<System.DateTime> DueDate { get; set; }

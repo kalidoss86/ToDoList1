@@ -9,17 +9,17 @@ using ToDoList.DBConnection;
 
 namespace ToDoList
 {
-    public class Repository<TObject> : IRepository<TObject>
+    public class TaskRepository<TObject> : IRepository<TObject>
         where TObject : class
     {
         protected TodoListDbEntities Context = null;
 
-        public Repository()
+        public TaskRepository()
         {
             Context = new TodoListDbEntities();
         }
 
-        public Repository(TodoListDbEntities context)
+        public TaskRepository(TodoListDbEntities context)
         {
             this.Context = context;
         }
@@ -32,19 +32,19 @@ namespace ToDoList
             }
         }
 
-        public IQueryable<TObject> All()
+        public IQueryable<TObject> GetAll()
         {
             return DbSet.AsQueryable();
         }
 
-        public TObject Create(TObject t)
+        public TObject Add(TObject t)
         {
             var newEntry = DbSet.Add(t);
             Context.SaveChanges();
             return newEntry;
         }
 
-        public void Delete(TObject t)
+        public void Remove(TObject t)
         {
             DbSet.Remove(t);
             Context.SaveChanges();

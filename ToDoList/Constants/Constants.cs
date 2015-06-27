@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToDoListCmd
+namespace ToDoList.Constants
 {
-    class Program
+    public class Constants
     {
-        static void Main(string[] args)
-        {
-        }
+        public static string DateDisplayFormat = "MMM d yyyy";
     }
 }
