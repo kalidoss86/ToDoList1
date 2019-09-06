@@ -26,7 +26,9 @@ namespace ToDoList
             //itom - bvd:11.01.001.8721
             //item - hack:fest
             //item - hack:fest1
-            //item - hack:fest2
+            //item - hack:fest4
+            //item - hack:fest3
+
             taskRepository.Add(newTask);
             return ListAll();
         }
