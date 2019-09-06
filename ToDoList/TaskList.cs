@@ -24,6 +24,7 @@ namespace ToDoList
         {
             //Add Comment to commit for hackfest
             //itom - bvd:11.01.001.8721
+            //item - hack:fest
             taskRepository.Add(newTask);
             return ListAll();
         }
